@@ -1,4 +1,4 @@
-![Order Logo](order.png)
+![Order Logo](domain/src/main/java/projectinfo/order.png)
 
 Örder is an innovative (not really) order management application. The front-end 
 will be a beautiful designed javascript-based application that will communicate with an even more 
