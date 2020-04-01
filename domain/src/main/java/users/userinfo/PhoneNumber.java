@@ -8,6 +8,6 @@ public class PhoneNumber {
     public PhoneNumber(int areaCode, int number) {
         this.areaCode = areaCode;
         this.number = number;
-        fullNumber=areaCode+"/"+fullNumber;
+        fullNumber = areaCode + "/" + fullNumber;
     }
 }

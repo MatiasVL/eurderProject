@@ -1,8 +1,15 @@
 package users;
 
+import items.Item;
+import items.ItemGroup;
+import orders.Order;
+import repositories.ItemRepository;
 import users.userinfo.Address;
 import users.userinfo.PhoneNumber;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Customer {
@@ -12,6 +19,7 @@ public class Customer {
     private String email;
     private Address address;
     private PhoneNumber phoneNumber;
+    private List<ItemGroup> customerCart;
 
     public Customer(String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
         this.customerId = UUID.randomUUID();
@@ -20,9 +28,24 @@ public class Customer {
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        customerCart = new ArrayList<>();
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public void addToCart(UUID itemId, int amount) {
+        Item selectedItem = ItemRepository.getItemWithUniqueId(itemId);
+        ItemGroup itemGroupToAdd = new ItemGroup(itemId, amount, selectedItem.determineShippingDate());
+        customerCart.add(itemGroupToAdd);
+    }
+
+    public Order order() {
+        return new Order(customerCart, customerId);
+    }
+
+    public List<ItemGroup> getCustomerCart() {
+        return customerCart;
     }
 }

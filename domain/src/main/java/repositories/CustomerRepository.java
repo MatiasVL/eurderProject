@@ -13,12 +13,12 @@ public class CustomerRepository {
     public CustomerRepository() {
     }
 
-    public static void createCustomerAccount (String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber){
-        Customer customer = new Customer(firstName,lastName,email,address,phoneNumber);
+    public static void createCustomerAccount(String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
+        Customer customer = new Customer(firstName, lastName, email, address, phoneNumber);
         CustomerRepository.addCustomer(customer);
     }
 
-    public static void addCustomer (Customer customer){
+    public static void addCustomer(Customer customer) {
         customerList.add(customer);
     }
 
