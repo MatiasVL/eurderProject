@@ -6,8 +6,6 @@ import repositories.CustomerRepository;
 import users.userinfo.Address;
 import users.userinfo.PhoneNumber;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class AdminTest {
     Admin admin = new Admin();
 
