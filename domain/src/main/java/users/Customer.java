@@ -20,6 +20,7 @@ public class Customer {
     private Address address;
     private PhoneNumber phoneNumber;
     private List<ItemGroup> customerCart;
+    private String fullName;
 
     public Customer(String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
         this.customerId = UUID.randomUUID();
@@ -29,6 +30,7 @@ public class Customer {
         this.address = address;
         this.phoneNumber = phoneNumber;
         customerCart = new ArrayList<>();
+        fullName = firstName+" "+lastName;
     }
 
     public String getEmail() {
@@ -47,5 +49,14 @@ public class Customer {
 
     public List<ItemGroup> getCustomerCart() {
         return customerCart;
+    }
+
+    public UUID getCustomerId() {
+        return customerId;
+    }
+
+    @Override
+    public String toString() {
+        return fullName;
     }
 }
