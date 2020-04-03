@@ -18,7 +18,7 @@ Authentication or authorization are completely optional.
 
 ## Story IT1: Item overview
 
-**As a user I want to see an overview of all the items so that I can see what Items exist.**
+**As a user I want to see an overview of all the domain.items so that I can see what Items exist.**
 
 ![](img/order-Item-overview.png)
 
@@ -35,7 +35,7 @@ Authentication or authorization are completely optional.
 
 ## Story IT2: Item overview - Filter
 
-**As a user I want to filter items in the overview of all the items so that I can more efficiently find an Item.**
+**As a user I want to filter domain.items in the overview of all the domain.items so that I can more efficiently find an Item.**
 
 ![](img/order-Item-overview-filter.png)
 - Filter by name only
@@ -83,7 +83,7 @@ Authentication or authorization are completely optional.
 
 - We should be able to navigate to an Item's detail page:
     - By directly navigating to a url that contains the id of the item.
-        - https://order-frontend-site.com/items/<id>
+        - https://order-frontend-site.com/domain.items/<id>
     - By clicking on an item's name or image in the item overview.
 - The following information should be present on the item's detail page
     - Id
@@ -113,36 +113,36 @@ Authentication or authorization are completely optional.
     - Add an 'Edit' button on the Item detail's page that, upon being clicked, redirects to the item's edit page.
     - After updating the changes, redirect to the detail page, it should show the new changes.
 
-## Story CU1: users.Customer overview
+## Story CU1: domain.users.Customer overview
 
 **As a user I want to see an overview of all the customers so that I can see what Customers exist.**
 
-![](img/order-users.Customer-overview.png)
+![](img/order-domain.users.Customer-overview.png)
 
 - For each customer, show:
     - Id
     - Firstname
     - Lastname
-- The New users.Customer, View and Edit buttons can already be added (just as placeholders)
+- The New domain.users.Customer, View and Edit buttons can already be added (just as placeholders)
 - _Pagination is not required_
 
-## Story CU2: users.Customer overview - Filter
+## Story CU2: domain.users.Customer overview - Filter
 
 **As a user I want to filter customers in the overview of all the customers so that I can more efficiently find a customer.**
 
-![](img/order-users.Customer-overview-filter.png)
+![](img/order-domain.users.Customer-overview-filter.png)
 - Filter by lastname only
     - Filtering is not case-sensitive
     - Filtering is based-on a starts-with strategy.
 - The filtering can be performed purely on the frontend side. 
 
-## Story CU3: Create users.Customer
+## Story CU3: Create domain.users.Customer
 
-**As a user I want to create a users.Customer so that I can have more Customers than I have now.**
+**As a user I want to create a domain.users.Customer so that I can have more Customers than I have now.**
 
-![](img/order-Create-users.Customer.png)
+![](img/order-Create-domain.users.Customer.png)
 
-- The following information should be provided for creating a users.Customer:
+- The following information should be provided for creating a domain.users.Customer:
     - firstName
     - lastName
     - email (value object)
@@ -154,16 +154,16 @@ Authentication or authorization are completely optional.
     - phoneNumber (value object)
 - Provide proper validation
     - Red text should provide quick feedback to the user what he did wrong.
-- After successfully creating a users.Customer, redirect the user to the users.Customer detail page. 
+- After successfully creating a domain.users.Customer, redirect the user to the domain.users.Customer detail page. 
     - This page might not yet exist, simply redirect to the url of the page then.
     
-## Story CU4: View users.Customer Detail
+## Story CU4: View domain.users.Customer Detail
 
-**As a user I want to view one specific users.Customer so that I can see its detailed information**
+**As a user I want to view one specific domain.users.Customer so that I can see its detailed information**
 
-![](img/order-users.Customer-Detail.png)
+![](img/order-domain.users.Customer-Detail.png)
 
-- We should be able to navigate to a users.Customer's detail page:
+- We should be able to navigate to a domain.users.Customer's detail page:
     - By directly navigating to the url that contains the id of the customer.
         - https://order-frontend-site.com/customers/<id>
     - By clicking on a customer's id or on the view button in the customers overview.
@@ -173,15 +173,15 @@ Authentication or authorization are completely optional.
     - email (value object)
     - address (value object)
     - phoneNumber (value object)
-- Clicking the Back button should automatically navigate back to the users.Customer overview.
+- Clicking the Back button should automatically navigate back to the domain.users.Customer overview.
 - No changes to the data can be made here, all contents is presented as labels or as read-only form elements
 - You can already add the Edit button as a placeholder.
 
-## Story CU5: Update users.Customer
+## Story CU5: Update domain.users.Customer
 
-**As a user I want to update (edit) one specific users.Customer so that I can keep its information up to date.**
+**As a user I want to update (edit) one specific domain.users.Customer so that I can keep its information up to date.**
 
-![](img/order-Update-users.Customer.png)
+![](img/order-Update-domain.users.Customer.png)
 
 - The following information should be editable:
     - firstName
@@ -191,7 +191,7 @@ Authentication or authorization are completely optional.
     - phoneNumber (value object)
 - Make sure all validation rules still apply.
 - The id should never be editable.
-- Clicking the Cancel button should automatically navigate back to the users.Customer Detail page.
+- Clicking the Cancel button should automatically navigate back to the domain.users.Customer Detail page.
 - Additionally (not optionally):
     - Add an 'Edit' button on the Item detail's page that, upon being clicked, redirects to the customer's edit page.
     - In the overview of the customers, make sure that the edit buttons go to the edit page of that customer.
@@ -199,19 +199,19 @@ Authentication or authorization are completely optional.
 
 ## Story ORBA1: Shop for Items
 
-**As a user I want to add Items to my basket so that I can keep an overview of the items I am going to order (before ordering them).**
+**As a user I want to add Items to my basket so that I can keep an overview of the domain.items I am going to order (before ordering them).**
 
 ![](img/order-Order-Items1.png)
 
 - Every item should have an Add to Basket button, this will add (1 amount of) the Item to the basket
-    - Out of Stock items can still be added.
+    - Out of Stock domain.items can still be added.
 - Technical tip: Keep the Basket in a singleton service or localStorage
 - When an Item is added to the basket, give some kind of visual feedback to the user that this happened.
 - Every Item should have a View Basket button (for now, just a placeholder) 
 
 ## Story ORBA2: View Basket
 
-**As a user I want to view my basket so that I can see the items I am going to order (before ordering them).**
+**As a user I want to view my basket so that I can see the domain.items I am going to order (before ordering them).**
 
 ![](img/order-Order-Items-basket.png)
 
@@ -232,19 +232,19 @@ Authentication or authorization are completely optional.
 - After clicking the Place Order button, and the order was successfully registered on the backend, provide the 
 user with a dialog to inform him/her about the fact that the placement of the order was successful.
 - The basket should automatically be cleared.
-- Automatically navigate to the items overview.
+- Automatically navigate to the domain.items overview.
 - (If the order should not be successful, inform the user!)  
 
 # Nice to Have stories
 
-## Story OR1: Overview of orders
+## Story OR1: Overview of domain.orders
 
-Show an overview of all the orders.
-- Be inspired by - and base yourself on - the stories for the overview of the items and customers 
+Show an overview of all the domain.orders.
+- Be inspired by - and base yourself on - the stories for the overview of the domain.items and customers 
 
 ## Story OR2: Order report
 
-For a specific customer, show in a visual appealing way, all of its orders (the report).
+For a specific customer, show in a visual appealing way, all of its domain.orders (the report).
 
 ## Story CUPAG1: Pagination
 
@@ -253,4 +253,4 @@ Provide for the overview of customers pagination
     - Thus, you get all the customers from the backend, but then paginate them on the frontend
         - (in reality: you will want to perform backend pagination as well)
 
-Try to turn the pagination into a reusable component that can also be used for the overview of the items. 
+Try to turn the pagination into a reusable component that can also be used for the overview of the domain.items. 

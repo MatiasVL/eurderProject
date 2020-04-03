@@ -1,9 +1,12 @@
-package users;
+package be.matias.service;
 
-import repositories.CustomerRepository;
+import be.matias.domain.repositories.CustomerRepository;
+import be.matias.domain.users.Customer;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
 public class Admin {
     public Admin() {
     }
@@ -12,8 +15,8 @@ public class Admin {
         return CustomerRepository.getCustomerList().toString();
     }
 
-    public String viewSingleCustomer_usingId(UUID customerId) {
-        return getCustomerWithId(customerId).toString();
+    public Customer viewSingleCustomer_usingId(String customerId) {
+        return getCustomerWithId(UUID.fromString(customerId));
     }
 
     public Customer getCustomerWithId(UUID customerId) {

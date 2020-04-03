@@ -1,11 +1,13 @@
-package repositories;
+package be.matias.domain.repositories;
 
-import items.Item;
+import be.matias.domain.items.Item;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Repository
 public class ItemRepository {
     private static List<Item> itemList = new ArrayList<>();
 

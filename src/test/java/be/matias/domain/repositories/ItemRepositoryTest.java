@@ -1,6 +1,6 @@
-package repositories;
+package be.matias.domain.repositories;
 
-import items.Item;
+import be.matias.domain.items.Item;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

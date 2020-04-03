@@ -1,4 +1,4 @@
-package items;
+package be.matias.domain.items;
 
 import java.time.LocalDate;
 import java.util.UUID;

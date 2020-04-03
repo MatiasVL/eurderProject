@@ -1,6 +1,6 @@
-package orders;
+package be.matias.domain.orders;
 
-import items.ItemGroup;
+import be.matias.domain.items.ItemGroup;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,6 +17,13 @@ public class Order {
         this.customerId = customerId;
         this.totalPrice = calculateTotalPrice();
         orderShippingDate = getLatestShippingDateFromItemGroup();
+    }
+
+    public Order(List<ItemGroup> itemGroups, UUID customerId, double totalPrice, LocalDate orderShippingDate) {
+        this.itemGroups = itemGroups;
+        this.customerId = customerId;
+        this.totalPrice = totalPrice;
+        this.orderShippingDate = orderShippingDate;
     }
 
     public LocalDate getLatestShippingDateFromItemGroup() {
@@ -44,5 +51,13 @@ public class Order {
 
     public LocalDate getOrderShippingDate() {
         return orderShippingDate;
+    }
+
+    public List<ItemGroup> getItemGroups() {
+        return itemGroups;
+    }
+
+    public UUID getCustomerId() {
+        return customerId;
     }
 }
